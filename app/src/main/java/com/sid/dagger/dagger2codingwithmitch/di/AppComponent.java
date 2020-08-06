@@ -2,6 +2,7 @@ package com.sid.dagger.dagger2codingwithmitch.di;
 
 import android.app.Application;
 import com.sid.dagger.dagger2codingwithmitch.BaseApplication;
+import com.sid.dagger.dagger2codingwithmitch.SessionManager;
 
 import javax.inject.Singleton;
 
@@ -20,9 +21,10 @@ import dagger.android.support.AndroidSupportInjectionModule;
         })
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
+    SessionManager sessionManager();
+
     @Component.Builder
     interface Builder{
-
         @BindsInstance
         Builder application(Application application);
 
