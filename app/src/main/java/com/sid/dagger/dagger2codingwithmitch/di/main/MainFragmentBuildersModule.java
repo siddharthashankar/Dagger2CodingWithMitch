@@ -1,5 +1,6 @@
 package com.sid.dagger.dagger2codingwithmitch.di.main;
 
+import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.posts.PostsFragment;
 import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.profile.ProfileFragment;
 
 import dagger.Module;
@@ -10,4 +11,7 @@ public abstract class MainFragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract ProfileFragment contributeProfileFragment();
+
+    @ContributesAndroidInjector
+    abstract PostsFragment constributePostsFragment();
 }

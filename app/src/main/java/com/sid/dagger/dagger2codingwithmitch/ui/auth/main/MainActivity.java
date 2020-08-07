@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.sid.dagger.dagger2codingwithmitch.BaseActivity;
 import com.sid.dagger.dagger2codingwithmitch.R;
-import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.profile.ProfileFragment;
+import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.posts.PostsFragment;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
 
     private void testFragment(){
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_container, new ProfileFragment())
+                .replace(R.id.main_container, new PostsFragment())
                 .commit();
     }
 
