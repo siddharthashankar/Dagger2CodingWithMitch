@@ -120,6 +120,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
         if (TextUtils.isEmpty(userId.getText().toString())) {
             return;
         }
+
         viewModel.authenticateWithId(Integer.parseInt(userId.getText().toString()));
     }
 

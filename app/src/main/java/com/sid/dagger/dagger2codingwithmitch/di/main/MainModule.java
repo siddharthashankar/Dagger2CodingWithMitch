@@ -1,6 +1,7 @@
 package com.sid.dagger.dagger2codingwithmitch.di.main;
 
 import com.sid.dagger.dagger2codingwithmitch.network.main.MainApi;
+import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.posts.PostRecyclerAdapter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -12,7 +13,11 @@ public class MainModule {
     @Provides
     static MainApi provideMainApi(Retrofit retrofit) {
         return retrofit.create(MainApi.class);
+    }
 
+    @Provides
+    static PostRecyclerAdapter provideAdapter(){
+        return new PostRecyclerAdapter();
     }
 }
 
