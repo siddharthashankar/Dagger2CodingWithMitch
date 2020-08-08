@@ -21,6 +21,7 @@ import com.sid.dagger.dagger2codingwithmitch.ui.auth.main.MainActivity;
 import com.sid.dagger.dagger2codingwithmitch.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
@@ -39,6 +40,15 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     @Inject
     RequestManager requestManager;
 
+    // for testing scope : Applevel scope and Auth level scope
+    @Inject
+    @Named("app_user")
+    User userNumber1;
+
+    @Inject
+    @Named("auth_user")
+    User userNumber2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,8 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
         setLogo();
 
         subscribeObservers();
+
+        Log.d(TAG, "onCreate: AppLevel Memory Address---"+userNumber1 +"--AuthLevel Memory Address--"+userNumber2);
     }
     private void setLogo(){
         requestManager

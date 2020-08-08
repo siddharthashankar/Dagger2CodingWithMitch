@@ -9,8 +9,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.sid.dagger.dagger2codingwithmitch.R;
+import com.sid.dagger.dagger2codingwithmitch.models.User;
 import com.sid.dagger.dagger2codingwithmitch.util.Constants;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -51,4 +53,13 @@ public class AppModule {
     static Drawable provideAppDrawable(Application application){
         return ContextCompat.getDrawable(application, R.drawable.logo);
     }
+
+
+    @Singleton
+    @Provides
+    @Named("app_user")
+    static User someUser(){
+        return  new User();
+    }
+
 }
